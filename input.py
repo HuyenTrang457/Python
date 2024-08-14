@@ -6,3 +6,11 @@ print(x+y+z)
 ## Hoặc Cách 2
 x,y,z= map(int, input('nhap').split())
 print(x+y+z)
+
+--------------
+from sys import stdin
+a=[]
+for s in stdin:
+   a+= list(map(int, s.split()))
+print(a)
+
