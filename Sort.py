@@ -7,6 +7,7 @@ print(a)
 from math import *
 from functools import cmp_to_key
 def cmp(a,b):
+    ## Cach 2: return a-b  ## tang dan
    if a<b:
       return -1
    elif a>b:
