@@ -1,3 +1,15 @@
+Tao dictionaries
+a= ['school','city','local']
+b=['hbb','hcm','dl']
+c= dict(zip(a,b))
+print(c)
+
+a= ['school','city','local']
+value = 1
+b= dict.fromkeys(a,value)
+print(b)
+-------------------------------------
+
 # Get all the keys in dictionary
 dict.keys() 
 
