@@ -1,6 +1,7 @@
 from collections import Counter
 a=[1,2,2,5,3,4,4,1]
 b= dict(Counter(a))
+b= list(dict(Counter(a)).items)
 ------------------------
 ## đếm số lượng khác nhau
 a=[1,2,3,2,2,4,4,5]
