@@ -8,3 +8,7 @@ for i in range(n):
    a.append(b) 
 
 print(a)
+
+------------plattan--------------
+c= [x for small_list in a for x in small_list]
+print(c)
