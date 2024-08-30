@@ -28,7 +28,51 @@ for i in range(n):
 student_list.sort(key= cmp_to_key(cmp))
 for x in student_list:
    print(x)
+
+
+---------- SINH VIÊN--- CHUẨN HÓA NGÀY SINH----- SẮP XẾP NGÀY SINH
+from math import *
+from functools import cmp_to_key
+from datetime import datetime
+class sinhVien:
+   def __init__(self,ma,hoTen,ngaySinh):
+      self.ma=str(ma)
+      while(len(self.ma)<3):
+         self.ma='0'+self.ma
+      self.hoTen= hoTen
+      self.ngaySinh= ngaySinh
+   def chuanHoa(self):
+      date_obj = datetime.strptime(self.ngaySinh, "%d/%m/%Y")
+    # Định dạng lại ngày tháng theo mong muốn
+      self.ngaySinh= date_obj.strftime("%d/%m/%Y")
+    
+   def __str__(self):
+      return f'ma sinh vien: {self.ma}\nho ten: {self.hoTen}\nngay sinh: {self.ngaySinh}'
+   def get_gpa(self):
+      return float(self.gpa)
+
+def cmp(a,b):
+   if a.ngaySinh >b.ngaySinh:
+      return 1 
+   elif a.ngaySinh<b.ngaySinh:
+      return -1
+   else:
+      return 0
    
+n= int(input('nhap n: '))
+student_list=[]
+for i in range(n):
+## a= sinhVien(i+1,input(),input())
+   ten= input()
+   ngaysinh= input()
+   a= sinhVien(i+1,ten,ngaysinh)
+   a.chuanHoa()
+   student_list.append(a)
+student_list.sort(key= cmp_to_key(cmp))
+for x in student_list:
+   print(x)
+   
+
 -----------LUONG NHAN VIEN ----------------------------
 class nhanVien:
    def __init__(self, maNv,hoTen,luongCoBan):
