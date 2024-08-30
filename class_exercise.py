@@ -1,16 +1,34 @@
--------- LOP SINH VIEN---------------------
+-------- LOP SINH VIEN---SẮP XẾP THEO GPA------------------
 from math import *
+from functools import cmp_to_key
 class sinhVien:
-   def __init__(self,hoTen,diem):
+   def __init__(self,ma,hoTen,gpa):
+      self.ma=str(ma)
+      while(len(self.ma)<3):
+         self.ma='0'+self.ma
       self.hoTen= hoTen
-      self.diem= diem
+      self.gpa= gpa
    def __str__(self):
-      return f'ho ten: {self.hoTen}\ndiem: {self.diem}'
-ten="nguyen thi huyen trang"
-diem=11
-a= sinhVien(ten,diem)
-print(a)
+      return f'ma sinh vien: {self.ma}\nho ten: {self.hoTen}\ngpa: {self.gpa}'
+   def get_gpa(self):
+      return float(self.gpa)
+def cmp(a,b):
+   if a.gpa!=b.gpa:
+      return a.gpa-b.gpa 
+   else:
+      return int(b.ma)- int(a.ma)
+n= int(input('nhap n: '))
+student_list=[]
+for i in range(n):
 
+   ten= input()
+   diem= float(input())
+   a= sinhVien(i+1,ten,diem)
+   student_list.append(a)
+student_list.sort(key= cmp_to_key(cmp))
+for x in student_list:
+   print(x)
+   
 -----------LUONG NHAN VIEN ----------------------------
 class nhanVien:
    def __init__(self, maNv,hoTen,luongCoBan):
