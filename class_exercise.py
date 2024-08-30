@@ -20,7 +20,7 @@ def cmp(a,b):
 n= int(input('nhap n: '))
 student_list=[]
 for i in range(n):
-
+## a= sinhVien(i+1,input(),input())
    ten= input()
    diem= float(input())
    a= sinhVien(i+1,ten,diem)
